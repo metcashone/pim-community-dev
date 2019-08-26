@@ -103,12 +103,17 @@ class PuppeteerEnvironment extends NodeEnvironment {
       }
 
       if(req.url().includes('/bundles/')) {
-        const assetURL = req.url().split('/bundles/')[1];
-        return req.respond({
-          body: fs.readFileSync(`${process.cwd()}/web/bundles/${assetURL}`)
-        })
+        try {
+          const assetURL = req.url().split('/bundles/')[1];
+          const assetFile = fs.readFileSync(`${process.cwd()}/web/bundles/${assetURL}`);
+          return req.respond({
+            body: assetFile
+          })
+        } catch (e) {
+          req.continue();
+        }
+
       }
-      // Resolve assets
     });
 
     await page.goto('http://pim.com');
