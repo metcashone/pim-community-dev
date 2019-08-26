@@ -42,6 +42,15 @@ describe('Product grid > number filter', () => {
   }, 60000);
 
   it('filters by the "is empty" operator', async () => {
-    expect(true).toEqual(true)
+    await page.waitForSelector('tr.AknGrid-bodyRow:nth-child(3)', {visible: true});
+    await page.click('button.AknFilterBox-addFilterButton')
+    await page.waitFor(500)
+    await page.click('.filters-column label[for="weight"]')
+    await page.click('.AknButton.AknButton--apply.close')
+    await page.click('.filter-box [data-name="weight"]')
+    await page.click('.open-filter .AknDropdown.operator')
+    await page.click('.open-filter .operator_choice[data-value="empty"]')
+    await page.click('.open-filter .filter-update')
+    expect(true).toBeTruthy()
   }, 60000);
 });
