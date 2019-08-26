@@ -102,6 +102,12 @@ class PuppeteerEnvironment extends NodeEnvironment {
         });
       }
 
+      if(req.url().includes('/bundles/')) {
+        const assetURL = req.url().split('/bundles/')[1];
+        return req.respond({
+          body: fs.readFileSync(`${process.cwd()}/web/bundles/${assetURL}`)
+        })
+      }
       // Resolve assets
     });
 
