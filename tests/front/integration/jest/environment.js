@@ -101,6 +101,8 @@ class PuppeteerEnvironment extends NodeEnvironment {
           body: dateFormat
         });
       }
+
+      // Resolve assets
     });
 
     await page.goto('http://pim.com');
