@@ -66,7 +66,7 @@ abstract class TestCase extends KernelTestCase
      */
     protected function get(string $service)
     {
-        return static::$kernel->getContainer()->get($service);
+        return self::$container->get($service);
     }
 
     /**
@@ -76,7 +76,7 @@ abstract class TestCase extends KernelTestCase
      */
     protected function getFromTestContainer(string $service)
     {
-        return $this->testKernel->getContainer()->get($service);
+        return $this->testKernel->getContainer()->get('test.service_container')->get($service);
     }
 
     /**
@@ -86,7 +86,7 @@ abstract class TestCase extends KernelTestCase
      */
     protected function getParameter(string $parameter)
     {
-        return static::$kernel->getContainer()->getParameter($parameter);
+        return self::$container->getParameter($parameter);
     }
 
     /**
@@ -96,7 +96,7 @@ abstract class TestCase extends KernelTestCase
      */
     protected function hasParameter(string $parameter)
     {
-        return static::$kernel->getContainer()->hasParameter($parameter);
+        return self::$container->hasParameter($parameter);
     }
 
     /**
@@ -104,7 +104,7 @@ abstract class TestCase extends KernelTestCase
      */
     protected function tearDown(): void
     {
-        $connectionCloser = $this->testKernel->getContainer()->get('akeneo_integration_tests.doctrine.connection.connection_closer');
+        $connectionCloser = $this->getFromTestContainer('akeneo_integration_tests.doctrine.connection.connection_closer');
         $connectionCloser->closeConnections();
 
         $this->esClient = null;
