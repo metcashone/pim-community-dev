@@ -229,9 +229,6 @@ jobs:
           name: Change owner on project dir in order to archive the project into the workspace
           command: sudo chown -R 1000:1000 ../project
       - run:
-          name: Pull the latest Docker images
-          command: docker-compose pull
-      - run:
           name: Merge JS code coverage reports and output HTML
           command: |
               docker-compose run --rm node yarn run instrument-merge
