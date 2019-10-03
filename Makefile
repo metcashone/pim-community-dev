@@ -44,6 +44,11 @@ javascript-dev:
 	$(DOCKER_COMPOSE) run -u www-data --rm php rm -rf public/dist
 	$(YARN_EXEC) run webpack-dev
 
+.PHONY: javascript-coverage
+javascript-coverage:
+	$(DOCKER_COMPOSE) run -u www-data --rm php rm -rf public/dist
+	$(YARN_EXEC) run webpack-dev --coverage
+
 .PHONY: javascript-test
 javascript-test:
 	$(DOCKER_COMPOSE) run -u www-data --rm php rm -rf public/dist

@@ -55,7 +55,7 @@ jobs:
             name: Build Javascript
             command: |
                 make javascript-test
-                make javascript-dev
+                make javascript-coverage
       - run:
             name: Change owner on project dir after install
             command: sudo chmod -R 777 ../project
