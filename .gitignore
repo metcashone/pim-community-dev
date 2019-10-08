@@ -54,3 +54,4 @@ coverage/*
 .env.behat.local
 .env.test.local
 .env.dev.local
+make-file/local.mk
