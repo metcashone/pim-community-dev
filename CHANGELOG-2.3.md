@@ -1,5 +1,7 @@
 # 2.3.x
 
+- PIM-6437: Remove empty or already added attribute groups from family edit screen
+
 # 2.3.66 (2019-10-09)
 
 # 2.3.65 (2019-10-04)
