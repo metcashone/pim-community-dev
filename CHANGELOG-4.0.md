@@ -244,6 +244,9 @@
 - Move class from `Akeneo\Pim\Enrichment\Bundle\ProductModel\Query\Sql\GetProductAssociationsByProductModelCodes` to `Akeneo\Pim\Enrichment\Bundle\Storage\Sql\ProductModel\GetProductAssociationsByProductModelCodes`
 - Move class from `Akeneo\Pim\Enrichment\Bundle\ProductModel\Query\Sql\GetProductModelsAssociationsByProductModelCodes` to `Akeneo\Pim\Enrichment\Bundle\Storage\Sql\ProductModel\GetProductModelsAssociationsByProductModelCodes`
 - Move class from `Akeneo\Pim\Enrichment\Bundle\ProductModel\Query\Sql\GetValuesAndPropertiesFromProductModelCodes` to `Akeneo\Pim\Enrichment\Bundle\Storage\Sql\ProductModel\GetValuesAndPropertiesFromProductModelCodes`
+- Move all factory classes in `Akeneo\Pim\Enrichment\Component\Product\Factory\Read\Value` to `Akeneo\Pim\Enrichment\Component\Product\Factory\Value`
+- Move class from `Akeneo\Pim\Enrichment\Component\Product\Factory\Read\ValueCollectionFactory` to `Akeneo\Pim\Enrichment\Component\Product\Factory\ValueCollectionFactory`
+- Move class from `Akeneo\Pim\Enrichment\Component\Product\Factory\Read\WriteValueCollectionFactory` to `Akeneo\Pim\Enrichment\Component\Product\Factory\WriteValueCollectionFactory`
 
 ### CLI Commands
 
